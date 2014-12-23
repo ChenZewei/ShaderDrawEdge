@@ -1,0 +1,17 @@
+#version 130
+
+//in vec4 vColor;
+in vec4 vVertex;
+vec4 vVertexNew;
+out vec4 vVaryingColor;
+uniform vec4 center;//三角形质心
+
+void main(void) 
+    { 
+    vVaryingColor = vec4(0.0,0.0,0.0,0.0);
+    vVertexNew = vVertex;
+    vVertexNew.xy -= centry.xy;
+    vVertexNew.xy = vVertexNew.xy*1.1;
+    vVertexNew.xy += centry.xy;
+    gl_Position = vVertexNew;
+    }
